@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clean Slider</title>
+
+    <style>
+        * {
+            --dark: #1C1F33;
+            --light: #666370;
+            --primary: #ff220c;
+            --secondary: #d33e43;
+            --tertiary: #9b7874
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark);
+            background-image: linear-gradient(45deg, var(--dark), var(--light));
+            font-size: 17px;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .buttons span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem;
+        }
+
+        .slide {
+            background-image: linear-gradient(45deg, var(--secondary), var(--tertiary));
+            min-height: 300px;
+            padding: 1rem;
+        }
+    </style>
+    <style>
+        /*
+        Author: Rien Heuver, rienheuver@gmail.com
+        Clean slider css, this is all that is needed
+        */
+        .slider {
+            display: grid;
+            grid-template-columns: 1fr;
+            overflow: hidden;
+            width: 100%;
+            perspective: 400px;
+        }
+
+        .slide {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            transition: transform 300ms ease-in-out;
+        }
+
+        .slide-next {
+            transform: translateX(100%);
+        }
+
+        .slide-prev {
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-container">
+        <div class="slider">
+            <div class="slide slide-prev">Slide 1</div>
+            <div class="slide slide-prev">Slide 2</div>
+            <div class="slide slide-active">Slide 3</div>
+            <div class="slide slide-next">Slide 4</div>
+            <div class="slide slide-next">Slide 5</div>
+        </div>
+        <div class="buttons">
+            <span class="prev" onclick="prevSlide()">
+                Previous
+            </span>
+            <span class="next" onclick="nextSlide()">
+                Next
+            </span>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function prevSlide() {
+            let current = document.querySelector(".slide-active");
+            let prev = document.querySelector(".slide-active").previousElementSibling;
+            if (prev !== null) {
+                current.className = "slide slide-next";
+                prev.className = "slide slide-active";
+            }
+        }
+
+        function nextSlide() {
+            let current = document.querySelector(".slide-active");
+            let next = document.querySelector(".slide-active").nextElementSibling;
+            if (next !== null) {
+                current.className = "slide slide-prev";
+                next.className = "slide slide-active";
+            }
+        }
+    </script>
+</body>
+
+</html>
