@@ -28,6 +28,7 @@ Clean Slider, this is all that is needed
     transform: translateX(-100%);
 }
 ```
+Also as gist: https://gist.github.com/rienheuver/df5ff228c6883f96f47f94a6d6c49a2d
 
 ## Usage
 An example is provided in the html of this repository.
@@ -61,4 +62,3 @@ Remove the last 7 lines of code that handle the transforms on `prev-slide` and `
 
  ## Author
  Rien Heuver, rienheuver@gmail.com
- 
