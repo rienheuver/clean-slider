@@ -31,7 +31,7 @@ Clean Slider, this is all that is needed
 Also as gist: https://gist.github.com/rienheuver/df5ff228c6883f96f47f94a6d6c49a2d
 
 ## Usage
-An example is provided in the html of this repository.
+An example is provided in the html of this repository which can be viewed at https://rienheuver.github.io/.
 The following HTML creates the most simple slider with 3 slides. Of course any number of slides is supported. In this example, the second slide is currently active. All slides with class `slide-prev` will be to the left by default, all slides with class `slide-next` will be to the right. To activate a certain slide, simply remove the `slide-prev` or `slide-next` class. To deactivate a slide, add the `slide-prev` or `slide-next` class, dependent on where the slide should go.
 ```
 <div class="slider">
